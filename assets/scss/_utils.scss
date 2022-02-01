@@ -1,0 +1,31 @@
+.container {
+  padding-inline: 1.5rem;
+}
+
+.font-link {
+  text-transform: uppercase;
+  font: $font-body;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+}
+
+.btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  //   padding: 0.5rem;
+
+  &--icon {
+    // width: 30px;dd
+    height: 1.8rem;
+  }
+
+  &--normal {
+    padding: 0.75rem 2.75rem;
+
+    &--dark {
+      background-color: $clr-black;
+      color: $clr-white;
+    }
+  }
+}
