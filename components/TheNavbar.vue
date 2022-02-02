@@ -1,40 +1,46 @@
 <script lang="ts">
-import Vue from "vue"
+import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Navbar',
-  data(){
+  data() {
     return {
-      isOpen: false
+      isOpen: false,
     }
   },
   methods: {
     toggleNavbar() {
       this.isOpen = !this.isOpen
-    }
-  }
+    },
+  },
 })
 </script>
 
 <template>
   <nav class="navbar container">
-    <Logo class="dark" />
+    <TheLogo class="dark" />
 
     <div class="navbar__links" v-if="isOpen">
       <ul class="link-list" role="list">
-        <li class="link-list__item"><a href="#!" class="font-link">Stories</a></li>
-        <li class="link-list__item"><a href="#!" class="font-link">Features</a></li>
-        <li class="link-list__item"><a href="#!" class="font-link">Pricing</a></li>
+        <li class="link-list__item">
+          <a href="#!" class="font-link">Stories</a>
+        </li>
+        <li class="link-list__item">
+          <a href="#!" class="font-link">Features</a>
+        </li>
+        <li class="link-list__item">
+          <a href="#!" class="font-link">Pricing</a>
+        </li>
       </ul>
       <button class="btn btn--normal btn--normal--dark">Get an invite</button>
     </div>
 
     <div class="navbar__menu">
       <button class="btn btn--icon" v-if="!isOpen" @click="toggleNavbar">
-        <img src="/shared/mobile/menu.svg" alt="Open the navbar">
+        <img src="/shared/mobile/menu.svg" alt="Open the navbar" />
       </button>
       <button class="btn btn--icon" v-else @click="toggleNavbar">
-        <img src="/shared/mobile/close.svg" alt="Close the navbar">
+        <img src="/shared/mobile/close.svg" alt="Close the navbar" />
       </button>
     </div>
   </nav>
