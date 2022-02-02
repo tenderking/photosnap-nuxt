@@ -81,8 +81,8 @@
       </nav>
     </div>
     <div class="footer__footer">
-      <FlatButton />
-      <p class="footer__copyright">Copyright 2019. All Rights Reserved</p>
+      <flat-button>get link</flat-button>
+      <p class="font-body">Copyright 2019. All Rights Reserved</p>
     </div>
   </footer>
 </template>
@@ -97,7 +97,9 @@ export default {
 Footer {
   background-color: $clr-black;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+
+  justify-content: center;
   align-items: center;
 }
 </style>

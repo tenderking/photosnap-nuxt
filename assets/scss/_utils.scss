@@ -9,6 +9,26 @@
   font-weight: 700;
 }
 
+.font-h1-h2 {
+  font: $font-h1-h2;
+  letter-spacing: 4.17px;
+  text-transform: uppercase;
+}
+.font-h2 {
+  font: $font-h2;
+}
+.font-h3 {
+  font: $font-h3;
+}
+.font-h4 {
+  font: $font-h4;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.font-body {
+  font: $font-body;
+  color: $clr-grey;
+}
 .btn {
   border: none;
   background: transparent;
