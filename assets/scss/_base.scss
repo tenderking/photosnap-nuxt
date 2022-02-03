@@ -40,7 +40,6 @@ body {
   line-height: 1.5;
   font-family: 'DM Sans', sans-serif;
 }
-
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration: none;
@@ -59,6 +58,7 @@ button,
 textarea,
 select {
   font: inherit;
+  border: 0;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
