@@ -1,7 +1,16 @@
 .container {
   padding-inline: 1.5rem;
 }
-
+@media (min-width: $tablet) {
+  .container {
+    padding-inline: 2.5rem;
+  }
+}
+@media (min-width: $desktop) {
+  .container {
+    padding-inline: 10rem;
+  }
+}
 .font-link {
   text-transform: uppercase;
   font: $font-body;
