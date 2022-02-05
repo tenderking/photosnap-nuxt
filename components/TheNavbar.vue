@@ -41,13 +41,13 @@ export default Vue.extend({
     <div class="navbar__links" v-if="isOpen">
       <ul class="link-list" role="list">
         <li class="link-list__item">
-          <a href="#!" class="font-link">Stories</a>
+          <nuxt-link to="/" class="font-link">Stories</nuxt-link>
         </li>
         <li class="link-list__item">
-          <a href="#!" class="font-link">Features</a>
+          <nuxt-link to="/features" class="font-link">Features</nuxt-link>
         </li>
         <li class="link-list__item">
-          <a href="#!" class="font-link">Pricing</a>
+          <nuxt-link to="/" class="font-link">Pricing</nuxt-link>
         </li>
       </ul>
       <ButtonsNormalButton :isDark="true">Get an invite</ButtonsNormalButton>
