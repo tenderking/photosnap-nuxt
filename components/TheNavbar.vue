@@ -32,7 +32,7 @@ export default Vue.extend({
           <a href="#!" class="font-link">Pricing</a>
         </li>
       </ul>
-      <button class="btn btn--normal btn--normal--dark">Get an invite</button>
+      <ButtonsNormalButton :isDark="true">Get an invite</ButtonsNormalButton>
     </div>
 
     <div class="navbar__menu">

@@ -57,5 +57,10 @@
       background-color: $clr-black;
       color: $clr-white;
     }
+
+    &--light {
+      background-color: $clr-white;
+      color: $clr-black;
+    }
   }
 }
