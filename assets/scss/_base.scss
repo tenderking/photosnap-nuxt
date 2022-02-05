@@ -41,7 +41,7 @@ body {
   font-family: 'DM Sans', sans-serif;
 }
 /* A elements that don't have a class get default styles */
-a:not([class]) {
+a[class] {
   text-decoration: none;
 }
 
