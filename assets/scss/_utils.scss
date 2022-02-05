@@ -16,6 +16,10 @@
   font: $font-body;
   letter-spacing: 2.5px;
   font-weight: 700;
+
+  @media (min-width: $tablet) {
+    font: $font-h4;
+  }
 }
 
 .font-h1-h2 {
@@ -43,10 +47,13 @@
   border: none;
   background: transparent;
   cursor: pointer;
-  //   padding: 0.5rem;
+  @extend .font-link;
+
+  @media (min-width: $tablet) {
+    font: $font-h4;
+  }
 
   &--icon {
-    // width: 30px;dd
     height: 1.8rem;
   }
 
@@ -61,6 +68,10 @@
     &--light {
       background-color: $clr-white;
       color: $clr-black;
+    }
+
+    @media (min-width: $tablet) {
+      padding-inline: 1.5rem;
     }
   }
 }
