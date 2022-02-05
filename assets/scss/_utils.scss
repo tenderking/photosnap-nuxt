@@ -1,16 +1,15 @@
 .container {
   padding-inline: 1.5rem;
-}
-@media (min-width: $tablet) {
-  .container {
+
+  @media (min-width: $tablet) {
     padding-inline: 2.5rem;
   }
-}
-@media (min-width: $desktop) {
-  .container {
+
+  @media (min-width: $desktop) {
     padding-inline: 10rem;
   }
 }
+
 .font-link {
   text-transform: uppercase;
   font: $font-body;
@@ -27,22 +26,27 @@
   letter-spacing: 4.17px;
   text-transform: uppercase;
 }
+
 .font-h2 {
   font: $font-h2;
 }
+
 .font-h3 {
   font: $font-h3;
 }
+
 .font-h4 {
   font: $font-h4;
   letter-spacing: 2px;
   text-transform: uppercase;
   text-decoration: none;
 }
+
 .font-body {
   font: $font-body;
   color: $clr-grey;
 }
+
 .btn {
   border: none;
   background: transparent;
