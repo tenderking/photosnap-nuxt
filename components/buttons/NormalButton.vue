@@ -2,7 +2,7 @@
   <button
     :class="[
       isDark ? 'btn--normal--dark' : 'btn--normal--light',
-      'btn btn--normal btn--normal--dark',
+      'btn btn--normal',
     ]"
   >
     <slot></slot>
