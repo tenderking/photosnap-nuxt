@@ -2,6 +2,7 @@
   <div>
     <p>Hello world</p>
     <nuxt-link to="/features"> Go to features </nuxt-link>
+    <nuxt-link to="/stories"> Go to stories </nuxt-link>
   </div>
 </template>
 <script lang="ts">

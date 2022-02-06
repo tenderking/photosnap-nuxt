@@ -6,11 +6,11 @@
       <nav class="footer__nav">
         <ul class="footer__nav-ul" role="list">
           <li><nuxt-link to="/" class="font-h4">Home</nuxt-link></li>
-          <li><nuxt-link to="#!" class="font-h4">Stories</nuxt-link></li>
+          <li><nuxt-link to="/stories" class="font-h4">Stories</nuxt-link></li>
           <li>
             <nuxt-link to="/features" class="font-h4">Features</nuxt-link>
           </li>
-          <li><nuxt-link to="#!" class="font-h4">Pricing</nuxt-link></li>
+          <li><nuxt-link to="/pricing" class="font-h4">Pricing</nuxt-link></li>
         </ul>
       </nav>
 
