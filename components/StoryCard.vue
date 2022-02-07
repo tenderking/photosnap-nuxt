@@ -1,10 +1,15 @@
 <template>
   <div class="card">
     <!-- <img class="card__img" :src="story.imgUrlDesktop" :alt="story.title" /> -->
-    <img
-      class="card__img"
-      src="./../static/stories/desktop/calm-waters.jpg"
-      alt=""
+    <nuxt-img
+      class="card__img--mobile"
+      :src="story.imgUrlMobile"
+      :alt="story.title"
+    />
+    <nuxt-img
+      class="card__img--desktop"
+      :src="story.imgUrlDesktop"
+      :alt="story.title"
     />
     <div class="card__text-container">
       <p class="font-body">{{ story.createdAt }}</p>
@@ -33,20 +38,24 @@ export default {
 .card {
   position: relative;
 
-  min-width: minmax(260px, 100%);
+  width: 100%;
 
-  &__img {
+  &__img--mobile {
     width: 100%;
   }
+  &__img--desktop {
+    display: none;
+  }
   &__text-container {
+    outline: #5a77ff dot;
     position: absolute;
     z-index: 999;
     margin: 0 auto;
-    inset: 70% 0 0 0;
+    inset: auto auto 0 0;
 
     font-family: Arial, sans-serif;
     color: #fff;
-    padding-inline: 2.5rem;
+    padding: 2.5rem;
 
     &__text-container > * + * {
       padding-block: 0.25rem;
@@ -85,6 +94,21 @@ export default {
         )
         red;
       z-index: 9999;
+    }
+  }
+}
+@media (min-width: $tablet) {
+  .card {
+    position: relative;
+
+    min-width: minmax(260px, 100%);
+
+    &__img--mobile {
+      display: none;
+    }
+    &__img--desktop {
+      display: block;
+      width: 100%;
     }
   }
 }
