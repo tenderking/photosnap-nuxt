@@ -27,7 +27,9 @@
         Kentucky and West Virginia, and while the ridges are not high, the
         terrain is extremely rugged.
       </p>
-      <ButtonsFlatButton class="light"> Read The STory </ButtonsFlatButton>
+      <ButtonsFlatButton class="flat-button_light-text">
+        Read The STory
+      </ButtonsFlatButton>
     </div>
   </div>
 </template>
