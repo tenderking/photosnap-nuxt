@@ -1,6 +1,7 @@
 <template>
   <div>
     <p>features page</p>
+    <TheBanner />
   </div>
 </template>
 
