@@ -1,5 +1,6 @@
 <template>
   <div>
+    <StoryFeatured />
     <div class="stories-container">
       <div class="stories-card" v-for="story in storiesList" :key="story.id">
         <StoryCard :story="story" class="border" />
