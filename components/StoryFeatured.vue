@@ -67,30 +67,33 @@ export default {}
 @media (min-width: $tablet) {
   .featured {
     position: relative;
+
+    &:after {
+      /* Rectangle */
+      content: '';
+      inset: 0 0 0 0;
+
+      position: absolute;
+      display: inline-block;
+
+      background: radial-gradient(
+        68.48% 68.48% at 0% 100%,
+        #ffc593 0%,
+        rgba(188, 113, 152, 0.496968) 52.36%,
+        rgba(90, 119, 255, 0.0001) 100%
+      );
+      mix-blend-mode: normal;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    &:hover:after {
+      opacity: 0.49;
+      transition: opacity 1s;
+    }
     &__img--tablet {
       display: block;
       width: 100%;
-      &::after {
-        content: '';
-
-        width: 100px;
-        height: 100100px;
-
-        background: rgba(0, 0, 0, 0.6);
-        opacity: 0.5;
-        transition: all 0.5s;
-        -webkit-transition: all 0.5s;
-      }
-      // mix-blend-mode: normal;
-      /*  background: radial-gradient(
-      68.48% 68.48% at 0% 100%,
-          #ffc593 0%,
-          rgba(188, 113, 152, 0.496968) 52.36%,
-          rgba(90, 119, 255, 0.0001) 100%
-        );*/
-      &:hover:after {
-        opacity: 1;
-      }
+      background: white;
     }
     &__text {
       position: absolute;
