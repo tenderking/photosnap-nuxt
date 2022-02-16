@@ -49,16 +49,26 @@ export default {
   &__text-container {
     outline: #5a77ff dot;
     position: absolute;
+    width: 100%;
+    height: 50%;
     z-index: 999;
     margin: 0 auto;
     inset: auto auto 0 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.0001) 0.27%,
+      rgba(0, 0, 0, 0.661222) 100%
+    );
 
     font-family: Arial, sans-serif;
     color: #fff;
-    padding: 2.5rem;
+    padding: 5rem 2.5rem 0;
 
     &__text-container > * + * {
       padding-block: 0.25rem;
+    }
+    h3 {
+      padding-block: 0.5rem;
     }
     &--h4 {
       border-top: solid 0.0125rem $clr-grey;
