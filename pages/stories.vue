@@ -22,13 +22,7 @@ export default Vue.extend({
 </script>
 <style lang="scss" scoped>
 .stories-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-flow: 1;
-  width: 100vw;
-  margin-inline: auto;
-  .stories-card {
-    flex-grow: 1;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 }
 </style>
