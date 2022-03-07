@@ -14,10 +14,9 @@
         </ul>
       </nav>
 
-      <ButtonsFlatButton
-        class="flat-button_light-text footer__btn-cta"
-        message="Get an invite"
-      ></ButtonsFlatButton>
+      <ButtonsFlatButton :isDark="true" class="footer__btn-cta"
+        >Get an invite</ButtonsFlatButton
+      >
 
       <p class="font-body footer__copyright">
         Copyright 2019. All Rights Reserved

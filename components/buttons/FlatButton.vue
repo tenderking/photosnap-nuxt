@@ -1,11 +1,17 @@
 <template>
   <button class="btn flat-button">
-    <span class="flat-button__content font-h4">
+    <span
+      class="flat-button__content font-h4"
+      :class="isDark ? 'flat-button_light-text' : 'flat-button_dark-text'"
+    >
       <slot>{{ message }}</slot>
     </span>
     <svg xmlns="http://www.w3.org/2000/svg" width="43" height="14">
       <g fill="none" fill-rule="evenodd" stroke="#000">
-        <path d="M0 7h41.864M35.428 1l6 6-6 6" id="target" />
+        <path
+          d="M0 7h41.864M35.428 1l6 6-6 6"
+          :id="isDark ? 'target' : 'target-light'"
+        />
       </g>
     </svg>
   </button>
@@ -19,6 +25,9 @@ export default {
       // It can be either one or several types for one attribute
       type: String,
       default: '',
+    },
+    isDark: {
+      type: Boolean,
     },
   },
 }
@@ -36,7 +45,7 @@ export default {
   }
   &_light-text {
     color: $clr-white;
-    #target {
+    #target-light {
       stroke: $clr-white;
     }
   }
