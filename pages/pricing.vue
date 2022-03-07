@@ -39,32 +39,40 @@ export default {
 }
 </script>
 <template>
-  <div class="pricing">
-    <ButtonsToggleButton
-      :isMonthly="isActive"
-      @click.native="togglePricing()"
-    />
-    <div class="pricing__cards container">
-      <PricingCard :content="basic" :isMonthly="isActive" />
-      <PricingCard :content="pro" :isMonthly="isActive" />
-      <PricingCard :content="business" :isMonthly="isActive" />
+  <div class="pricing-container">
+    <div class="pricing">
+      <ButtonsToggleButton
+        :isMonthly="isActive"
+        @click.native="togglePricing()"
+      />
+      <div class="pricing__cards container">
+        <PricingCard :content="basic" :isMonthly="isActive" />
+        <PricingCard :content="pro" :isMonthly="isActive" />
+        <PricingCard :content="business" :isMonthly="isActive" />
+      </div>
     </div>
+    <h1 class="font-h1-h2">Compare</h1>
+    <PricingTable />
   </div>
 </template>
 
 <style lang="scss" scoped>
-.pricing {
-  padding-block: 7.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 2.5rem;
-
-  &__cards {
-    display: grid;
+.pricing-container {
+  display: grid;
+  place-items: center;
+  .pricing {
+    padding-block: 7.5rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 2em;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    &__cards {
+      display: grid;
+      align-items: center;
+      gap: 2em;
+    }
   }
 }
 @media (min-width: $desktop) {
