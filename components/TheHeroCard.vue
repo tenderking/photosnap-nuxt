@@ -1,11 +1,6 @@
 <script>
 export default {
   name: 'TheHeroCard',
-  data() {
-    return {
-      getImg: this.img.mobile,
-    }
-  },
   props: {
     img: {
       type: Object,
@@ -23,12 +18,14 @@ export default {
       default: false,
     },
   },
+  /*
   methods: {
     checkScreen() {
       if (process.browser) {
         const mediaMobile = window.matchMedia('(max-width: 768px)')
         const mediaTablet = window.matchMedia('(min-width: 768px)')
         const mediaDesktop = window.matchMedia('(min-width: 1200px)')
+
         if (mediaMobile.matches) {
           this.getImg = this.img.mobile
         }
@@ -45,11 +42,17 @@ export default {
     this.checkScreen()
     if (process.browser) window.addEventListener('resize', this.checkScreen)
   },
+  */
 }
 </script>
 <template>
   <div class="hero" :class="{ dark: isDark }">
-    <img :src="getImg" alt="hero-img" class="hero__img" />
+    <picture>
+      <source media="(min-width: 1200px)" :srcset="img.desktop">
+      <source media="(min-width: 768px)" :srcset="img.tablet">
+      <img :src="img.mobile" class="hero__img">
+    </picture>
+    <!-- <img :src="getImg" alt="hero-img" class="hero__img" /> -->
     <div class="hero__text" :class="{ dark: isDark }">
       <h2 class="font-h1-h2 hero__text-title">
         <slot name="h2"></slot>
@@ -57,15 +60,17 @@ export default {
       <p class="font-normal hero__text-content">
         <slot name="p"></slot>
       </p>
-      <ButtonsFlatButton v-show="isButton" :isDark="false">
+      <ButtonsFlatButton v-show="isButton" :isDark="true">
         <slot name="btn"></slot>
       </ButtonsFlatButton>
     </div>
   </div>
 </template>
+
 <style lang="scss" scoped>
 .hero {
-  width: 100vw;
+   width: 100%;
+
   .dark {
     position: relative;
     background-color: $clr-black;
@@ -102,6 +107,7 @@ export default {
     min-width: 100vw;
   }
 }
+
 @media (min-width: $tablet) {
   .hero {
     display: flex;

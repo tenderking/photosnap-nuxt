@@ -32,7 +32,7 @@
 
     <div class="stories-container">
       <div class="stories-card" v-for="story in slicedStories" :key="story.id">
-        <StoryCard :story="story" class="border" />
+        <StoryCard :story="story" />
       </div>
     </div>
     <div class="item-container container">

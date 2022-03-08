@@ -9,7 +9,7 @@ export default {
 
   methods: {
     toggleButton() {
-      console.log('hi')
+      // console.log('hi')
       this.isActive = !this.isActive
     },
   },
