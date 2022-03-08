@@ -29,15 +29,29 @@
       </template>
       <template v-slot:btn>View The stories</template>
     </the-hero-card>
+
+    <div class="stories-container">
+      <div class="stories-card" v-for="story in slicedStories" :key="story.id">
+        <StoryCard :story="story" class="border" />
+      </div>
+    </div>
+    <div class="item-container container">
+      <div v-for="feature in slicedFeatures" :key="feature.id">
+        <FeatureItem :feature="feature" />
+      </div>
+    </div>
   </div>
 </template>
-<script lang="ts">
-import Vue from 'vue'
+<script>
+import { features } from '../static/features.json'
+import { stories } from './../static/stories.json'
 
-export default Vue.extend({
+export default {
   name: 'IndexPage',
   data() {
     return {
+      features,
+      stories,
       imgDark: {
         mobile: '/home/mobile/beautiful-stories.jpg',
         tablet: '/home/tablet/beautiful-stories.jpg',
@@ -55,5 +69,36 @@ export default Vue.extend({
       },
     }
   },
-})
+  computed: {
+    slicedFeatures() {
+      return this.features.slice(0, 3)
+    },
+    slicedStories() {
+      return this.stories.slice(0, 4)
+    },
+  },
+}
 </script>
+<style lang="scss" scoped>
+.item-container {
+  padding-block: 1.5rem;
+}
+@media (min-width: $tablet) {
+  .stories-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(350px, 1fr));
+  }
+}
+@media (min-width: $desktop) {
+  .item-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(350px, 1fr));
+    gap: 1em;
+    padding-block: 10rem;
+  }
+  .stories-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(350px, 1fr));
+  }
+}
+</style>
