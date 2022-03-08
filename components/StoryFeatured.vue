@@ -20,7 +20,10 @@
       <h1 class="font-h1-h2 featured__text--title">
         Hazy full moon of appalachia
       </h1>
-      <p class="font-body">March 2nd 2020 by John Appleseed</p>
+      <div class="featured__info">
+        <p class="font-body featured__info--date">March 2nd 2020</p>
+        <p class="font-body">by John Appleseed</p>
+      </div>
       <p class="font-body featured__text--description">
         The dissected plateau area, while not actually made up of geological
         mountains, is popularly called "mountains," especially in eastern
@@ -47,17 +50,27 @@ export default {}
   &__img--desktop {
     display: none;
   }
+  &__info {
+    display: flex;
+    gap: 1rem;
+    &--date {
+      opacity: 75%;
+    }
+  }
 
   &__text {
     background: $clr-black;
-    color: white;
+    color: $clr-white;
     padding-block: 7.325rem;
 
     &--title {
       width: 10ch;
+      color: $clr-white;
     }
     &--description {
       width: 35ch;
+      color: $clr-white;
+      opacity: 60%;
     }
 
     z-index: 9;
