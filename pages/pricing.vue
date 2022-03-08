@@ -1,5 +1,7 @@
 <script>
+import TheHeroCard from '~/components/TheHeroCard.vue'
 export default {
+  components: { TheHeroCard },
   name: 'PricingPage',
   data() {
     return {
@@ -28,11 +30,15 @@ export default {
         monthlyPrice: '$19.00',
         type: 'light',
       },
+      img: {
+        mobile: '/pricing/mobile/hero.jpg',
+        tablet: '/pricing/tablet/hero.jpg',
+        desktop: '/pricing/desktop/hero.jpg',
+      },
     }
   },
   methods: {
     togglePricing() {
-      console.log('hello')
       this.isActive = !this.isActive
     },
   },
@@ -40,6 +46,14 @@ export default {
 </script>
 <template>
   <div class="pricing-container">
+    <the-hero-card :img="img" :isDark="true">
+      <template v-slot:h2> Pricing</template>
+      <template v-slot:p
+        >Create a your stories, Photosnap is a platform for photographers and
+        visual storytellers. It’s the simple way to create and share your
+        photos.
+      </template>
+    </the-hero-card>
     <div class="pricing">
       <ButtonsToggleButton
         :isMonthly="isActive"
