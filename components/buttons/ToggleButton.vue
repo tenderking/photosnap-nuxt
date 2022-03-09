@@ -7,14 +7,17 @@ export default {
     }
   },
 
+  props: {
+    value: { type: Boolean }
+  },
+
   methods: {
     toggleButton() {
-      // console.log('hi')
-      this.isActive = !this.isActive
+      this.$emit('input', !this.value)
     },
   },
   watch: {
-    isActive(newValue, oldValue) {
+    value(newValue, oldValue) {
       newValue === true ? (this.circlePos = 48) : (this.circlePos = 16)
     },
   },
@@ -23,7 +26,7 @@ export default {
 
 <template>
   <div class="main">
-    <h3 class="font-h3" :class="{ active: isActive }">Monthly</h3>
+    <h3 class="font-h3" :class="{ active: value }">Monthly</h3>
     <svg
       @click="toggleButton()"
       width="64"
@@ -47,7 +50,7 @@ export default {
         fill="black"
       />
     </svg>
-    <h3 class="font-h3" :class="{ active: !isActive }">Yearly</h3>
+    <h3 class="font-h3" :class="{ active: !value }">Yearly</h3>
   </div>
 </template>
 

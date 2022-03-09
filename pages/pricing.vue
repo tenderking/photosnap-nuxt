@@ -5,7 +5,7 @@ export default {
   name: 'PricingPage',
   data() {
     return {
-      isActive: true,
+      isMonthly: true,
       pro: {
         title: 'Pro',
         content:
@@ -37,11 +37,6 @@ export default {
       },
     }
   },
-  methods: {
-    togglePricing() {
-      this.isActive = !this.isActive
-    },
-  },
 }
 </script>
 <template>
@@ -55,14 +50,12 @@ export default {
       </template>
     </the-hero-card>
     <div class="pricing">
-      <ButtonsToggleButton
-        :isMonthly="isActive"
-        @click.native="togglePricing()"
-      />
+      <ButtonsToggleButton v-model="isMonthly"/>
+
       <div class="pricing__cards container">
-        <PricingCard :content="basic" :isMonthly="isActive" />
-        <PricingCard :content="pro" :isMonthly="isActive" />
-        <PricingCard :content="business" :isMonthly="isActive" />
+        <PricingCard :content="basic" :isMonthly="isMonthly" />
+        <PricingCard :content="pro" :isMonthly="isMonthly" />
+        <PricingCard :content="business" :isMonthly="isMonthly" />
       </div>
     </div>
     <h1 class="font-h1-h2">Compare</h1>
