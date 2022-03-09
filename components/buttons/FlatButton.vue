@@ -1,16 +1,15 @@
 <template>
-  <button class="btn flat-button">
+  <button class="btn flat-button" :class="[isDarkBtn ? 'light-btn' : 'dark-btn']">
     <span
       class="flat-button__content font-h4"
-      :class="isDark ? 'flat-button_light-text' : 'flat-button_dark-text'"
     >
       <slot>{{ message }}</slot>
     </span>
     <svg xmlns="http://www.w3.org/2000/svg" width="43" height="14">
-      <g fill="none" fill-rule="evenodd" stroke="#000">
+      <g fill="none" fill-rule="evenodd">
         <path
           d="M0 7h41.864M35.428 1l6 6-6 6"
-          :id="isDark ? 'target' : 'target-light'"
+          id="target"
         />
       </g>
     </svg>
@@ -26,28 +25,31 @@ export default {
       type: String,
       default: '',
     },
-    isDark: {
+    isDarkBtn: {
       type: Boolean,
+      default: false
     },
   },
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.dark-btn {
+  stroke: $clr-black;
+  color: $clr-black;
+}
+
+.light-btn {
+  stroke: $clr-white;
+  color: $clr-white;
+}
+
 .flat-button {
   display: flex;
   gap: 22px;
-  &_dark-text {
-    color: $clr-black;
-    #target {
-      stroke: $clr-black;
+
+  &:hover {
+      text-decoration: underline;
     }
-  }
-  &_light-text {
-    color: $clr-white;
-    #target-light {
-      stroke: $clr-white;
-    }
-  }
 }
 </style>
