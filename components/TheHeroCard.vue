@@ -48,9 +48,9 @@ export default {
 <template>
   <div class="hero" :class="{ dark: isDark }">
     <picture>
-      <source media="(min-width: 1200px)" :srcset="img.desktop">
-      <source media="(min-width: 768px)" :srcset="img.tablet">
-      <img :src="img.mobile" class="hero__img">
+      <source media="(min-width: 1200px)" :srcset="img.desktop" />
+      <source media="(min-width: 768px)" :srcset="img.tablet" />
+      <img :src="img.mobile" class="hero__img" />
     </picture>
     <!-- <img :src="getImg" alt="hero-img" class="hero__img" /> -->
     <div class="hero__text" :class="{ dark: isDark }">
@@ -69,7 +69,7 @@ export default {
 
 <style lang="scss" scoped>
 .hero {
-   width: 100%;
+  width: 100%;
 
   .dark {
     position: relative;
@@ -104,16 +104,14 @@ export default {
     }
   }
   &__img {
-    min-width: 100vw;
+    min-width: 100%;
   }
 }
 
 @media (min-width: $tablet) {
   .hero {
     display: flex;
-    &__img {
-      min-width: 0;
-    }
+
     &__text {
       margin: 0;
       padding: 0;
