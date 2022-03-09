@@ -1,6 +1,6 @@
 <template>
   <div>
-    <the-hero-card :img="imgDark" :isDark="true" :isButton="true">
+    <the-hero-card :img="imgFirst" :isDark="true" :isButton="true">
       <template v-slot:h2> Create and share your photo stories. </template>
       <template v-slot:p
         >Photosnap is a platform for photographers and visual storytellers. We
@@ -9,7 +9,7 @@
       <template v-slot:btn>Get an invite</template>
     </the-hero-card>
     <the-hero-card
-      :img="imgRev"
+      :img="imgSecond"
       :style="{ 'flex-direction': 'row-reverse' }"
       :isButton="true"
     >
@@ -52,12 +52,12 @@ export default {
     return {
       features,
       stories,
-      imgDark: {
+      imgSecond: {
         mobile: '/home/mobile/beautiful-stories.jpg',
         tablet: '/home/tablet/beautiful-stories.jpg',
         desktop: '/home/desktop/beautiful-stories.jpg',
       },
-      imgRev: {
+      imgFirst: {
         mobile: '/home/mobile/create-and-share.jpg',
         tablet: '/home/tablet/create-and-share.jpg',
         desktop: '/home/desktop/create-and-share.jpg',

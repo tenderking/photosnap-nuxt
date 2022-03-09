@@ -90,14 +90,20 @@ export default {
   }
   &__text {
     display: grid;
-    width: 100%;
     place-content: center;
     padding-inline: 1.75rem;
     padding-block: 4.5rem;
+    width: 100%;
+
     &-title,
     &-content {
       padding-bottom: 1rem;
     }
+
+    &-title {
+      max-width: 14ch;
+    }
+
     &-content {
       max-width: 35ch;
       opacity: 50%;
@@ -113,8 +119,6 @@ export default {
     display: flex;
 
     &__text {
-      margin: 0;
-      padding: 0;
       padding-inline: 3.75rem;
     }
     .dark {
@@ -138,6 +142,10 @@ export default {
   .hero {
     &__text {
       padding-inline: 7rem;
+      width: 45%;
+    }
+    &__img {
+      width: 55%;
     }
   }
 }
