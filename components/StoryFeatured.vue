@@ -64,11 +64,11 @@ export default {}
     padding-block: 7.325rem;
 
     &--title {
-      width: 10ch;
+      max-width: 10ch;
       color: $clr-white;
     }
     &--description {
-      width: 35ch;
+      max-width: 35ch;
       color: $clr-white;
       opacity: 60%;
     }
