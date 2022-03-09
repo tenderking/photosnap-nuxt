@@ -60,7 +60,7 @@ export default {
       <p class="font-normal hero__text-content">
         <slot name="p"></slot>
       </p>
-      <ButtonsFlatButton v-show="isButton" :isDark="true">
+      <ButtonsFlatButton v-show="isButton" :isDarkBtn="isDark">
         <slot name="btn"></slot>
       </ButtonsFlatButton>
     </div>

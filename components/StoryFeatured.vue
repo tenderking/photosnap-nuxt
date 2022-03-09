@@ -30,7 +30,7 @@
         Kentucky and West Virginia, and while the ridges are not high, the
         terrain is extremely rugged.
       </p>
-      <ButtonsFlatButton class="flat-button_light-text">
+      <ButtonsFlatButton :isDarkBtn="true">
         Read The STory
       </ButtonsFlatButton>
     </div>

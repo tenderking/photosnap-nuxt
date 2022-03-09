@@ -7,8 +7,8 @@
     </h2>
 
     <ButtonsFlatButton
-      class="flat-button_light-text"
       message="Get an invite"
+      :isDarkBtn="true"
     ></ButtonsFlatButton>
   </div>
 </template>

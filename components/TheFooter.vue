@@ -14,7 +14,7 @@
         </ul>
       </nav>
 
-      <ButtonsFlatButton :isDark="true" class="footer__btn-cta"
+      <ButtonsFlatButton :isDarkBtn="true" class="footer__btn-cta"
         >Get an invite</ButtonsFlatButton
       >
 
@@ -83,6 +83,7 @@ export default {
       grid-column: -1 / span 1;
       grid-row: 4 / span1;
       justify-self: flex-end;
+      color: $clr-white;
     }
   }
 }
