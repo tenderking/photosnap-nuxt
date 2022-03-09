@@ -74,6 +74,8 @@ export default {
 .pricing-container {
   display: grid;
   place-items: center;
+  padding-bottom: 8rem;
+
   .pricing {
     padding-block: 7.5rem;
     display: flex;

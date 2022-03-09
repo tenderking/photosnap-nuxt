@@ -36,7 +36,7 @@ export default Vue.extend({
 
 <template>
   <nav class="navbar container">
-    <nuxt-link to="/" class="font-link"><TheLogo class="dark" /></nuxt-link>
+    <nuxt-link to="/" class="ont-link"><TheLogo class="dark" /></nuxt-link>
 
     <div class="navbar__links" v-if="isOpen">
       <ul class="link-list" role="list">
