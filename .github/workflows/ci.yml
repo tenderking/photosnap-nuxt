@@ -45,8 +45,8 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: yarn
         
-      # - name: Generate
-      #   run: yarn generate
+      - name: Generate
+        run: yarn generate
         
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
