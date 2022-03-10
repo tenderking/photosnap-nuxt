@@ -48,7 +48,7 @@
     display: flex;
     gap: 1rem;
     &--date {
-      opacity: 75%;
+      opacity: 0.75;
     }
   }
 
@@ -64,7 +64,7 @@
     &--description {
       max-width: 35ch;
       color: $clr-white;
-      opacity: 60%;
+      opacity: 0.6;
     }
 
     z-index: 9;

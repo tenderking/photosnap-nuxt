@@ -118,7 +118,7 @@ export default {
 
     &-content {
       max-width: 35ch;
-      opacity: 50%;
+      opacity: 0.5;
     }
   }
   &__img {
