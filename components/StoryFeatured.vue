@@ -30,16 +30,10 @@
         Kentucky and West Virginia, and while the ridges are not high, the
         terrain is extremely rugged.
       </p>
-      <ButtonsFlatButton :isDarkBtn="true">
-        Read The STory
-      </ButtonsFlatButton>
+      <ButtonsFlatButton :isDarkBtn="true"> Read The STory </ButtonsFlatButton>
     </div>
   </div>
 </template>
-
-<script>
-export default {}
-</script>
 
 <style lang="scss" scoped>
 .featured {
@@ -112,7 +106,7 @@ export default {}
     }
     &__text {
       position: absolute;
-      inset: 0 auto auto 0;
+      inset: auto auto 0 0;
 
       background: 0;
     }

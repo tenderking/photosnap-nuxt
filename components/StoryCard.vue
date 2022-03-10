@@ -47,26 +47,19 @@ export default {
     display: none;
   }
   &__text-container {
-    outline: #5a77ff dot;
     position: absolute;
     width: 100%;
-    height: 50%;
-    z-index: 999;
-    margin: 0 auto;
+
     inset: auto auto 0 0;
     background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0.0001) 0.27%,
-      rgba(0, 0, 0, 0.661222) 100%
+      rgba(0, 0, 0, 0.661222) 70%
     );
 
-    font-family: Arial, sans-serif;
-    color: #fff;
-    padding: 5rem 2.5rem 0;
+    color: $clr-white;
+    padding: 5rem 2.5rem 2rem;
 
-    &__text-container > * + * {
-      padding-block: 0.25rem;
-    }
     h3 {
       padding-block: 0.5rem;
     }
@@ -109,10 +102,6 @@ export default {
 }
 @media (min-width: $tablet) {
   .card {
-    position: relative;
-
-    min-width: minmax(260px, 100%);
-
     &__img--mobile {
       display: none;
     }
