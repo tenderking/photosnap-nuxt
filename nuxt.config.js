@@ -2,7 +2,7 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   router: {
-    base: '/photosnap-nuxt/'
+    base: '/photosnap-nuxt/',
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -49,7 +49,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/typescript
-    //  '@nuxt/typescript-build',
+    '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
     //'@nuxtjs/stylelint-module',
     '@nuxt/image',
