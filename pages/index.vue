@@ -43,7 +43,7 @@
   </div>
 </template>
 <script>
-import { features } from '../static/features.json'
+import { features } from './../static/features.json'
 import { stories } from './../static/stories.json'
 
 export default {

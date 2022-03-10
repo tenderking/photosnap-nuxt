@@ -30,7 +30,7 @@ export default {
   &__content {
     max-width: 35ch;
     text-align: center;
-    opacity: 50%;
+    opacity: 0.5;
   }
 }
 </style>

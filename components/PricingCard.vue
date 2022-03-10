@@ -23,6 +23,7 @@ export default {
     },
     content: {
       type: Object,
+      required: true,
     },
   },
 }
@@ -42,7 +43,7 @@ export default {
     p {
       padding-bottom: 2.125rem;
       color: $clr-black;
-      opacity: 60%;
+      opacity: 0.6;
     }
     h2 {
       padding-bottom: 0.5rem;
@@ -55,7 +56,7 @@ export default {
     p {
       padding-bottom: 2.125rem;
       color: $clr-white;
-      opacity: 60%;
+      opacity: 0.6;
     }
     &::before {
       content: '';
