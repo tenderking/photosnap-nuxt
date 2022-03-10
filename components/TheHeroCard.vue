@@ -54,15 +54,17 @@ export default {
     </picture>
     <!-- <img :src="getImg" alt="hero-img" class="hero__img" /> -->
     <div class="hero__text" :class="{ dark: isDark }">
-      <h2 class="font-h1-h2 hero__text-title">
-        <slot name="h2"></slot>
-      </h2>
-      <p class="font-normal hero__text-content">
-        <slot name="p"></slot>
-      </p>
-      <ButtonsFlatButton v-show="isButton" :isDarkBtn="isDark">
-        <slot name="btn"></slot>
-      </ButtonsFlatButton>
+      <div class="hero__styling-div container">
+        <h2 class="font-h1-h2 hero__text-title">
+          <slot name="h2"></slot>
+        </h2>
+        <p class="font-normal hero__text-content">
+          <slot name="p"></slot>
+        </p>
+        <ButtonsFlatButton v-show="isButton" :isDarkBtn="isDark">
+          <slot name="btn"></slot>
+        </ButtonsFlatButton>
+      </div>
     </div>
   </div>
 </template>
@@ -75,25 +77,35 @@ export default {
     position: relative;
     background-color: $clr-black;
     color: $clr-white;
-    &::before {
-      content: '';
-      width: 8rem;
-      height: 6px;
-      top: 0;
-      position: absolute;
-      left: 1.75rem;
+    .hero__styling-div {
+      position: relative;
+      &::before {
+        content: '';
+        width: 8rem;
+        height: 6px;
+        top: 0;
+        position: absolute;
+        left: 1.75rem;
 
-      margin-bottom: 1em;
+        margin-bottom: 1em;
 
-      background: linear-gradient(#ffc593 0%, #bc7198 51.95%, #5a77ff 100%);
+        background: linear-gradient(#ffc593 0%, #bc7198 51.95%, #5a77ff 100%);
+      }
     }
   }
   &__text {
-    display: grid;
-    place-content: center;
-    padding-inline: 1.75rem;
-    padding-block: 4.5rem;
+    // display: grid;
+    // place-content: center;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
     width: 100%;
+    .hero__styling-div {
+      padding-block: 4.5rem;
+      flex-grow: 0;
+    }
 
     &-title,
     &-content {
@@ -117,23 +129,29 @@ export default {
 @media (min-width: $tablet) {
   .hero {
     display: flex;
-
     &__text {
-      padding-inline: 3.75rem;
+      padding-block: auto;
+      .hero__styling-div {
+        padding-block: 0;
+        flex-grow: 1;
+      }
     }
+
     .dark {
       position: relative;
       background-color: $clr-black;
       color: $clr-white;
-      &::before {
-        content: '';
-        height: 30%;
-        width: 6px;
-        left: 0;
-        top: 8rem;
+      .hero__styling-div {
+        position: relative;
+        &::before {
+          content: '';
+          height: 100%;
+          width: 6px;
+          left: 0;
 
-        position: absolute;
-        background: linear-gradient(#ffc593 0%, #bc7198 51.95%, #5a77ff 100%);
+          position: absolute;
+          background: linear-gradient(#ffc593 0%, #bc7198 51.95%, #5a77ff 100%);
+        }
       }
     }
   }
@@ -142,7 +160,7 @@ export default {
   .hero {
     &__text {
       width: 45%;
-      padding-inline: 7rem;
+
       flex-grow: 1;
     }
     &__img {
