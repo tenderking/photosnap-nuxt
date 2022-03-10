@@ -141,8 +141,9 @@ export default {
 @media (min-width: $desktop) {
   .hero {
     &__text {
-      padding-inline: 7rem;
       width: 45%;
+      padding-inline: 7rem;
+      flex-grow: 1;
     }
     &__img {
       width: 55%;
