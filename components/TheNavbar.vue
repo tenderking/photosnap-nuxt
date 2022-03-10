@@ -13,12 +13,17 @@ export default Vue.extend({
     toggleNavbar() {
       this.isOpen = !this.isOpen
     },
+    closeNavbar() {
+      if (this.isMobile) {
+        this.isOpen = false
+      }
+      return
+    },
     checkScreen() {
       if (process.browser) {
         const screenWidth = window.innerWidth
 
         this.isMobile = screenWidth < 768
-        this.isOpen = screenWidth > 768
       }
     },
   },
@@ -26,31 +31,39 @@ export default Vue.extend({
     this.checkScreen()
     if (process.browser) window.addEventListener('resize', this.checkScreen)
   },
-  watch: {
-    isMobile() {
-      if (this.isMobile) this.isOpen = true
-    },
-  },
 })
 </script>
 
 <template>
   <nav class="navbar container">
-    <nuxt-link to="/" class="ont-link"><TheLogo class="dark" /></nuxt-link>
+    <nuxt-link to="/" @click.native="closeNavbar"
+      ><TheLogo class="dark"
+    /></nuxt-link>
 
-    <div class="navbar__links" v-if="isOpen">
+    <div class="navbar__links" v-if="isOpen | !isMobile">
       <ul class="link-list" role="list">
         <li class="link-list__item">
-          <nuxt-link to="/stories" class="font-link">Stories</nuxt-link>
+          <nuxt-link to="/stories" class="font-link" @click.native="closeNavbar"
+            >Stories</nuxt-link
+          >
         </li>
         <li class="link-list__item">
-          <nuxt-link to="/features" class="font-link">Features</nuxt-link>
+          <nuxt-link
+            to="/features"
+            class="font-link"
+            @click.native="closeNavbar"
+            >Features</nuxt-link
+          >
         </li>
         <li class="link-list__item">
-          <nuxt-link to="/pricing" class="font-link">Pricing</nuxt-link>
+          <nuxt-link to="/pricing" class="font-link" @click.native="closeNavbar"
+            >Pricing</nuxt-link
+          >
         </li>
       </ul>
-      <ButtonsNormalButton :isDark="true">Get an invite</ButtonsNormalButton>
+      <ButtonsNormalButton :isDark="true" @click.native="closeNavbar"
+        >Get an invite</ButtonsNormalButton
+      >
     </div>
 
     <div class="navbar__menu" v-show="isMobile">
