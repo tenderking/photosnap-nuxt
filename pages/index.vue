@@ -1,6 +1,6 @@
 <template>
   <div>
-    <the-hero-card :img="imgFirst" :isDark="true" :isButton="true">
+    <the-hero-card :img="heroes.heroCardOne" :isDark="true" :isButton="true">
       <template v-slot:h2> Create and share your photo stories. </template>
       <template v-slot:p
         >Photosnap is a platform for photographers and visual storytellers. We
@@ -45,6 +45,7 @@
 <script>
 import { features } from './../static/features.json'
 import { stories } from './../static/stories.json'
+import heroes from './../static/heroes.json'
 
 export default {
   name: 'IndexPage',
@@ -52,21 +53,7 @@ export default {
     return {
       features,
       stories,
-      imgSecond: {
-        mobile: '/home/mobile/beautiful-stories.jpg',
-        tablet: '/home/tablet/beautiful-stories.jpg',
-        desktop: '/home/desktop/beautiful-stories.jpg',
-      },
-      imgFirst: {
-        mobile: '/home/mobile/create-and-share.jpg',
-        tablet: '/home/tablet/create-and-share.jpg',
-        desktop: '/home/desktop/create-and-share.jpg',
-      },
-      imgLight: {
-        mobile: '/home/mobile/designed-for-everyone.jpg',
-        tablet: '/home/tablet/designed-for-everyone.jpg',
-        desktop: '/home/desktop/designed-for-everyone.jpg',
-      },
+      heroes,
     }
   },
   computed: {

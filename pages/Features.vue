@@ -1,6 +1,6 @@
 <template>
   <div>
-    <the-hero-card :img="img" :isDark="true">
+    <the-hero-card :img="heroCardFeature" :isDark="true">
       <template v-slot:h2> Features</template>
       <template v-slot:p
         >We make sure all of our features are designed to be loved by every
@@ -19,15 +19,12 @@
 
 <script>
 import { features } from '../static/features.json'
+import { heroCardFeature } from './../static/heroes.json'
 export default {
   data() {
     return {
       features,
-      img: {
-        mobile: '/features/mobile/hero.jpg',
-        tablet: '/features/tablet/hero.jpg',
-        desktop: '/features/desktop/hero.jpg',
-      },
+      heroCardFeature,
     }
   },
 }

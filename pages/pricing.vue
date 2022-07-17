@@ -1,5 +1,6 @@
 <script>
 import TheHeroCard from '~/components/TheHeroCard.vue'
+import { heroCardPricing } from './../static/heroes.json'
 export default {
   components: { TheHeroCard },
   name: 'PricingPage',
@@ -30,18 +31,14 @@ export default {
         monthlyPrice: '$19.00',
         type: 'light',
       },
-      img: {
-        mobile: '/pricing/mobile/hero.jpg',
-        tablet: '/pricing/tablet/hero.jpg',
-        desktop: '/pricing/desktop/hero.jpg',
-      },
+      heroCardPricing,
     }
   },
 }
 </script>
 <template>
   <div class="pricing-container">
-    <the-hero-card :img="img" :isDark="true">
+    <the-hero-card :img="heroCardPricing" :isDark="true">
       <template v-slot:h2> Pricing</template>
       <template v-slot:p
         >Create a your stories, Photosnap is a platform for photographers and
@@ -50,7 +47,7 @@ export default {
       </template>
     </the-hero-card>
     <div class="pricing">
-      <ButtonsToggleButton v-model="isMonthly"/>
+      <ButtonsToggleButton v-model="isMonthly" />
 
       <div class="pricing__cards container">
         <PricingCard :content="basic" :isMonthly="isMonthly" />
