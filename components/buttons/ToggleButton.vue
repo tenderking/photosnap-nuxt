@@ -1,8 +1,10 @@
 <script>
+// we want to toggle the svg circle position when clicked and swap colors
+//
 export default {
   data() {
     return {
-      isActive: false,
+      isActive: this.value,
       circlePos: 16,
     }
   },
@@ -13,12 +15,13 @@ export default {
 
   methods: {
     toggleButton() {
-      this.$emit('input', !this.value)
+      this.$emit('input', !this.isActive)
     },
   },
   watch: {
     value(newValue, oldValue) {
-      newValue === true ? (this.circlePos = 16) : (this.circlePos = 48)
+      newValue === true ? (this.circlePos = 16) : (this.circlePos = 48),
+        (this.isActive = this.value)
     },
   },
 }
@@ -26,7 +29,7 @@ export default {
 
 <template>
   <div class="main">
-    <h3 class="font-h3" :class="{ active: !value }" @click="value = true">
+    <h3 class="font-h3" :class="{ active: !isActive }" @click="toggleButton()">
       Monthly
     </h3>
     <svg
@@ -42,17 +45,17 @@ export default {
         height="32"
         rx="16"
         fill="#DFDFDF"
-        :class="{ rect: value }"
+        :class="{ rect: isActive }"
       />
       <circle
-        :class="{ active: value }"
+        :class="{ active: isActive }"
         :cx="circlePos"
         cy="16"
         r="12"
         fill="black"
       />
     </svg>
-    <h3 class="font-h3" :class="{ active: value }" @click="value = false">
+    <h3 class="font-h3" :class="{ active: isActive }" @click="toggleButton()">
       Yearly
     </h3>
   </div>
