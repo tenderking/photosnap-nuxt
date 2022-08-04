@@ -43,7 +43,7 @@ export default {
       }
     },
   },
-  created() {
+  mounted() {
     this.checkScreen()
     if (process.browser) window.addEventListener('resize', this.checkScreen)
   },

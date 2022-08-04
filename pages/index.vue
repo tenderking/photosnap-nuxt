@@ -9,7 +9,7 @@
       <template v-slot:btn>Get an invite</template>
     </the-hero-card>
     <the-hero-card
-      :img="imgSecond"
+      :img="heroes.heroCardTwo"
       :style="{ 'flex-direction': 'row-reverse' }"
       :isButton="true"
     >
@@ -20,7 +20,7 @@
       </template>
       <template v-slot:btn>View the stories</template>
     </the-hero-card>
-    <the-hero-card :img="imgLight" :isButton="true">
+    <the-hero-card :img="heroes.heroCardThree" :isButton="true">
       <template v-slot:h2> DESIGNED FOR EVERYONE</template>
       <template v-slot:p
         >Photosnap can help you create stories that resonate with your audience.
