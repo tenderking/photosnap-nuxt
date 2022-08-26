@@ -56,11 +56,11 @@ export default {
       <source media="(min-width: 768px)" :srcset="img.tablet" />
       <img :src="img.mobile" class="hero__img" />
     </picture> -->
-    <template>
+    <!-- <template> -->
       <div>
         <img :src="getImg" alt="hero-img" class="hero__img" />
       </div>
-    </template>
+    <!-- </template> -->
     <div class="hero__text" :class="{ dark: isDark }">
       <div class="hero__styling-div container">
         <h2 class="font-h1-h2 hero__text-title">
