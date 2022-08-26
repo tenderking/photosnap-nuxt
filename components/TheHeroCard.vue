@@ -18,49 +18,51 @@ export default {
       default: false,
     },
   },
-  data() {
-    return {
-      getImg: null,
-    }
-  },
-
-  methods: {
-    checkScreen() {
-      if (process.browser) {
-        const mediaMobile = window.matchMedia('(max-width: 768px)')
-        const mediaTablet = window.matchMedia('(min-width: 768px)')
-        const mediaDesktop = window.matchMedia('(min-width: 1200px)')
-
-        if (mediaMobile.matches) {
-          this.getImg = this.img.mobile
-        }
-        if (mediaTablet.matches) {
-          this.getImg = this.img.tablet
-        }
-        if (mediaDesktop.matches) {
-          this.getImg = this.img.desktop
-        }
-      }
-    },
-  },
-  mounted() {
-    this.checkScreen()
-    if (process.browser) window.addEventListener('resize', this.checkScreen)
-  },
+  // data() {
+  //   return {
+  //     getImg: this.img.mobile,
+  //   }
+  // },
+  //
+  // methods: {
+  //   checkScreen() {
+  //     if (process.browser) {
+  //       const mediaMobile = window.matchMedia('(max-width: 768px)')
+  //       const mediaTablet = window.matchMedia('(min-width: 768px)')
+  //       const mediaDesktop = window.matchMedia('(min-width: 1200px)')
+  //
+  //       if (mediaMobile.matches) {
+  //         this.getImg = this.img.mobile
+  //       }
+  //       if (mediaTablet.matches) {
+  //         this.getImg = this.img.tablet
+  //       }
+  //       if (mediaDesktop.matches) {
+  //         this.getImg = this.img.desktop
+  //       }
+  //     }
+  //   },
+  // },
+  // mounted() {
+  //   this.checkScreen()
+  //   if (process.browser) window.addEventListener('resize', this.checkScreen)
+  // },
 }
 </script>
 <template>
   <div class="hero" :class="{ dark: isDark }">
-    <!-- <picture>
-      <source media="(min-width: 1200px)" :srcset="img.desktop" />
-      <source media="(min-width: 768px)" :srcset="img.tablet" />
-      <img :src="img.mobile" class="hero__img" />
-    </picture> -->
-    <!-- <template> -->
-      <div>
-        <img :src="getImg" alt="hero-img" class="hero__img" />
-      </div>
-    <!-- </template> -->
+    <!-- <picture> -->
+    <!--   <source media="(min-width: 1200px)" :srcset="require('')" /> -->
+    <!--   <source media="(min-width: 768px)" :srcset="img.tablet" /> -->
+    <!--   <nuxt-img :src="img.mobile" class="hero__img" /> -->
+    <!-- </picture> -->
+
+    <div>
+      <nuxt-img :src="img.mobile" alt="hero-img" class="hero__img hero__img--mobile" />
+      <nuxt-img :src="img.tablet" alt="hero-img" class="hero__img hero__img--tablet" />
+      <nuxt-img :src="img.desktop" alt="hero-img" class="hero__img hero__img--desktop" />
+    </div>
+
     <div class="hero__text" :class="{ dark: isDark }">
       <div class="hero__styling-div container">
         <h2 class="font-h1-h2 hero__text-title">
@@ -85,8 +87,10 @@ export default {
     position: relative;
     background-color: $clr-black;
     color: $clr-white;
+
     .hero__styling-div {
       position: relative;
+
       &::before {
         content: '';
         width: 8rem;
@@ -101,6 +105,7 @@ export default {
       }
     }
   }
+
   &__text {
     // display: grid;
     // place-content: center;
@@ -110,6 +115,7 @@ export default {
     align-items: center;
 
     width: 100%;
+
     .hero__styling-div {
       padding-block: 4.5rem;
       flex-grow: 0;
@@ -129,16 +135,35 @@ export default {
       opacity: 0.5;
     }
   }
+
   &__img {
     min-width: 100%;
+
+    /* &--mobile {} */
+    &--tablet,
+    &--desktop {
+      display: none
+    }
   }
 }
 
 @media (min-width: $tablet) {
   .hero {
+    &__img {
+      &--tablet {
+        display: block
+      }
+
+      &--mobile {
+        display: none
+      }
+    }
+
     display: flex;
+
     &__text {
       padding-block: auto;
+
       .hero__styling-div {
         padding-block: 0;
         flex-grow: 1;
@@ -149,8 +174,10 @@ export default {
       position: relative;
       background-color: $clr-black;
       color: $clr-white;
+
       .hero__styling-div {
         position: relative;
+
         &::before {
           content: '';
           height: 100%;
@@ -164,6 +191,7 @@ export default {
     }
   }
 }
+
 @media (min-width: $desktop) {
   .hero {
     &__text {
@@ -171,8 +199,17 @@ export default {
 
       flex-grow: 1;
     }
+
     &__img {
       width: 55%;
+
+      &--desktop {
+        display: block
+      }
+
+      &--tablet {
+        display: none
+      }
     }
   }
 }

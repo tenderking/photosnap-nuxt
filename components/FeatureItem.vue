@@ -6,7 +6,7 @@ export default {
 </script>
 <template>
   <div class="item">
-    <img :src="feature.imgUrl" alt="" class="item__img" />
+    <nuxt-img :src="feature.imgUrl" class="item__img" />
     <h3 class="font-h item__title">{{ feature.feature }}</h3>
     <p class="font-body item__content">{{ feature.description }}</p>
   </div>
