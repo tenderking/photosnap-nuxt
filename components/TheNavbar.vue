@@ -68,10 +68,10 @@ export default Vue.extend({
 
     <div class="navbar__menu" v-show="isMobile">
       <button class="btn btn--icon" v-if="!isOpen" @click="toggleNavbar">
-        <img src="/shared/mobile/menu.svg?data" alt="Open the navbar" />
+        <img src="@/static/shared/mobile/menu.svg" alt="Open the navbar" />
       </button>
       <button class="btn btn--icon" v-else @click="toggleNavbar">
-        <img src="/shared/mobile/close.svg?data" alt="Close the navbar" />
+        <img src="@/static/shared/mobile/close.svg" alt="Close the navbar" />
       </button>
     </div>
   </nav>
